@@ -82,6 +82,7 @@ describe('<Pet />', () => {
         const wrapper = shallow(<Pet pet={FEMALE_CAT} onAdoptPet={spy} />);
         wrapper.find('button.ui.primary.button').simulate('click');
         expect(spy.calledOnce).to.be.true;
+        console.log(spy.firstCall.args[0], 'is the id')
         expect(spy.firstCall.args[0]).to.equal(FEMALE_CAT.id);
       });
 
